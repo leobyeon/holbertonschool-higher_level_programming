@@ -10,65 +10,57 @@
 listint_t *insert_node(listint_t **head, int number)
 {
 	listint_t *trav;
-	listint_t *trav2;
-	listint_t *tmp;
+	listint_t *node;
 
 	trav = *head;
 
-	tmp = malloc(sizeof(listint_t));
-	if (!tmp)
+	node = malloc(sizeof(listint_t));
+	if (!node)
 		return (NULL);
 
-	tmp->n = number;
-	tmp->next = NULL;
+	node->n = number;
+	node->next = NULL;
 
 	if (*head == NULL)
 	{
-		*head = tmp;
-		return (*head);
+		*head = node;
+		return (node);
 	}
 
 	if (trav->next == NULL)
 	{
 		if (trav->n < number)
 		{
-			trav->next = tmp;
-			return (*head);
+			trav->next = node;
+			return (node);
 		}
 		else
 		{
-			tmp->next = trav;
-			*head = tmp;
-			return (*head);
+			node->next = trav;
+			*head = node;
+			return (node);
 		}
 	}
 
 	while (trav)
 	{
-		trav2 = trav->next;
-		if (trav->n > number)
+		if (trav->next)
 		{
-			tmp->next = trav;
-			*head = tmp;
-			return (tmp);
+			if (trav->next->n > number)
+			{
+				node->next = trav->next;
+				trav->next = node;
+				break;
+		    }
+			else
+				trav = trav->next;
 		}
-		else if ((trav->n < number) && (trav2->n < number))
+		else
 		{
-			trav = trav->next;
-			trav2 = trav2->next;
-		}
-		else if ((trav->n < number) && (trav2->n >= number))
-		{
-			tmp->next = trav2;
-			trav->next = tmp;
-			break;
-		}
-		else if ((trav->n < number) && (trav2->next == NULL))
-		{
-			tmp->next = NULL;
-			trav2->next = tmp;
+			node->next = NULL;
+			trav->next = node;
 			break;
 		}
 	}
-	return (tmp);
+	return (node);
 }
