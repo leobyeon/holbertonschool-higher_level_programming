@@ -3,18 +3,23 @@ if __name__ == "__main__":
     from calculator_1 import add, sub, mul, div
     import sys
     arg = sys.argv
+    v1 = arg[1]
+    v2 = arg[3]
+    op = arg[2]
+    error1 = "Usage: ./100-my_calculator.py <a> <operator> <b>"
+    error2 = "Unknown operator. Available operators: +, -, * and /"
     if len(arg) != 4:
-        print("{:s}".format("Usage: ./100-my_calculator.py <a> <operator> <b>"))
+        print("{:s}".format(error1))
         exit(1)
     else:
-        if arg[2] == '+':
-            print("{:d} + {:d} = {:d}".format(arg[1], arg[3], add(arg[1], arg[3])))
-        elif arg[2] == '-':
-            print("{:d} - {:d} = {:d}".format(arg[1], arg[3], sub(arg[1], arg[3])))
-        elif arg[2] == '*':
-            print("{:d} * {:d} = {:d}".format(arg[1], arg[3], mul(arg[1], arg[3])))
-        elif arg[2] == '/':
-            print("{:d} / {:d} = {:d}".format(arg[1], arg[3], div(arg[1], arg[3])))
+        if op == '+':
+            print("{:d} + {:d} = {:d}".format(v1, v2, add(v1, v2)))
+        elif op == '-':
+            print("{:d} - {:d} = {:d}".format(v1, v2, sub(v1, v2)))
+        elif op == '*':
+            print("{:d} * {:d} = {:d}".format(v1, v2, mul(v1, v2)))
+        elif op == '/':
+            print("{:d} / {:d} = {:d}".format(v1, v2, div(v1, v2)))
         else:
-            print("{:s}".format("Unknown operator. Available operators: +, -, * and /"))
+            print("{:s}".format(error2))
             exit(1)
