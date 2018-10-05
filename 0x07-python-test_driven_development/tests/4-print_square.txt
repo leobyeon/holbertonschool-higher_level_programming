@@ -1,0 +1,36 @@
+the ``print_square`` function
+===============================
+using ``print_square``
+----------------------
+import function:
+	>>> print_square = __import__('4-print_square').print_square
+
+some tests:
+
+	zero:
+	>>> print_square(0)
+	 
+
+	negative number:
+	>>> print_square(-5)
+	Traceback (most recent call last):
+	 ...
+	ValueError: size must be >= 0
+
+	negative float:
+	>>> print_square(-0.4)
+	Traceback (most recent call last):
+	...
+	TypeError: size must be an integer
+
+	non-number:
+	>>> print_square('k')
+	Traceback (most recent call last):
+	...
+	TypeError: size must be an integer
+
+	float:
+	>>> print_square(5.3)
+	Traceback (most recent call last):
+	...
+	TypeError: size must be an integer

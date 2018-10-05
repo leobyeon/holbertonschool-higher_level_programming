@@ -1,0 +1,31 @@
+the ``say_my_name`` function
+============================
+
+using ``say_my_name``
+---------------------
+
+import ``say_my_name``:
+
+	>>> say_my_name = __import__('3-say_my_name').say_my_name
+
+some tests:
+
+	non-string for first name only:
+	>>> say_my_name(1)
+	Traceback (most recent call last):
+	...
+	TypeError: first_name must be a string
+
+	non-string for last name:
+	>>> say_my_name("Borat", 5)
+	Traceback (most recent call last):
+	...
+	TypeError: last_name must be a string
+
+	empty string:
+	>>> say_my_name("")
+	My name is  
+
+	empty first name:
+	>>> say_my_name("", "Bob")
+	My name is  Bob

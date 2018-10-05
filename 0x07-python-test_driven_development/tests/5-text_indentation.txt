@@ -1,0 +1,53 @@
+the ``text_indentation`` function
+==================================
+using ``text_indentation``
+--------------------------
+import function:
+	>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+some tests:
+
+	empty string:
+	>>> text_indentation("") 
+
+	triple quotes:
+	>>> text_indentation("""Lorem: ? \n""")
+	Lorem:
+	<BLANKLINE>
+	?
+	<BLANKLINE>
+	<BLANKLINE>
+
+	space colon space:
+	>>> text_indentation(" : ")
+	:
+	<BLANKLINE>
+
+	single question mark:
+	>>> text_indentation("?")
+	?
+	<BLANKLINE>
+
+	newline and space:
+	>>> text_indentation("\n ")
+	<BLANKLINE>
+
+	space newline dot:
+	text_indentation(" \n.")
+	<BLANKLINE>
+	.
+	<BLANKLINE>
+
+	ellipsis:
+	text_indentation("...")
+	.
+	<BLANKLINE>
+	.
+	<BLANKLINE>
+	.
+	<BLANKLINE>
+
+	newline space a space bc and lots of spaces:
+	text_indentation("\n a bc     ")
+	<BLANKLINE>
+	a bc
