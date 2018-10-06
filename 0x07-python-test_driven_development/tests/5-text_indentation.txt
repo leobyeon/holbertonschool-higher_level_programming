@@ -10,44 +10,18 @@ some tests:
 	empty string:
 	>>> text_indentation("") 
 
-	triple quotes:
-	>>> text_indentation("""Lorem: ? \n""")
-	Lorem:
-	<BLANKLINE>
-	?
-	<BLANKLINE>
-	<BLANKLINE>
+	string:
+	>>> text_indentation("Holberton. School? How are you: John")
+	Holberton.
+	School?
+	How are you:
+	John
 
-	space colon space:
-	>>> text_indentation(" : ")
-	:
-	<BLANKLINE>
+	string 2:
+	text_indentation("Holberton.School")
+	Holberton.
+	School
 
-	single question mark:
-	>>> text_indentation("?")
-	?
-	<BLANKLINE>
-
-	newline and space:
-	>>> text_indentation("\n ")
-	<BLANKLINE>
-
-	space newline dot:
-	text_indentation(" \n.")
-	<BLANKLINE>
-	.
-	<BLANKLINE>
-
-	ellipsis:
-	text_indentation("...")
-	.
-	<BLANKLINE>
-	.
-	<BLANKLINE>
-	.
-	<BLANKLINE>
-
-	newline space a space bc and lots of spaces:
-	text_indentation("\n a bc     ")
-	<BLANKLINE>
-	a bc
+	string 3:
+	text_indentation("Holberton School")
+	Holberton School
