@@ -40,4 +40,6 @@ class Rectangle:
 
     def perimeter(self):
         """return rectangle perimeter"""
+        if self.area() is 0:
+            return 0
         return self.__width * 2 + self.__height * 2
