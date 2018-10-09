@@ -53,8 +53,7 @@ class Rectangle:
         newstr = ""
         if self.area is 0:
             return newstr
-        else:
-            return "\n".join([str(self.print_symbol) * self.width] * self.height)
+        return "\n".join([str(self.print_symbol) * self.width] * self.height)
 
     def __repr__(self):
         """return the formatted str"""
