@@ -6,9 +6,9 @@ def matrix_divided(matrix, div):
 
     if ((type(matrix) is not list) or
         (not all(type(row) is list for row in matrix)) or
-        (not all(
-        type(i) in (float, int) for row in matrix for i in row))):
-            raise TypeError("matrix must be a matrix (list of lists) \
+            (not all(
+            type(i) in (float, int) for row in matrix for i in row))):
+                raise TypeError("matrix must be a matrix (list of lists) \
 of integers/floats")
     if type(div) not in (float, int):
         raise TypeError("div must be a number")
