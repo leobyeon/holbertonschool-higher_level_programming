@@ -1,6 +1,10 @@
 #!/usr/bin/python3
 def matrix_divided(matrix, div):
     """function divides a matrix"""
+    for i, ls in enumerate(matrix):
+        if len(ls) != len(matrix[i - 1]):
+            raise TypeError("Each row of the matrix must have the same size")
+
     if ((type(matrix) is not list) or
         (not all(type(row) is list for row in matrix)) or
             (not all(
@@ -13,9 +17,5 @@ of integers/floats")
     
     if div == 0:
         raise ZeroDivisionError("division by zero")
-
-    for i, ls in enumerate(matrix):
-        if len(ls) != len(matrix[i - 1]):
-            raise TypeError("Each row of the matrix must have the same size")
 
     return [[round(x/div, 2) for x in y] for y in matrix]
