@@ -1,0 +1,27 @@
+``BaseGeometry class``
+=======================
+
+using ``BaseGeometry``
+-----------------------
+first import:
+
+	>>> bg = __import__('7-base_geometry').BaseGeometry
+
+	>>> a = bg()
+
+now use it:
+
+	>>> a.integer_validator("butt", -5)
+	Traceback (most recent call last):
+	...
+	ValueError: butt must be greater than 0
+
+	>>> a.integer_validator("butt", "hole")
+	Traceback (most recent call last):
+	...
+	TypeError: butt must be an integer
+
+	>>> a.integer_validator("butt", 0)
+	Traceback (most recent call last):
+	...
+	ValueError: butt must be greater than 0
