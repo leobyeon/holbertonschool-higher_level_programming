@@ -12,6 +12,7 @@ if __name__ == '__main__':
 
     except:
         obj_from_json = []
-        for i in range(1, len(sys.argv)):
-            obj_from_json.append(sys.argv[i])
-        save_file(obj_from_json, "add_item.json")
+        
+    for i in range(1, len(sys.argv)):
+        obj_from_json.append(sys.argv[i])
+    save_file(obj_from_json, "add_item.json")
