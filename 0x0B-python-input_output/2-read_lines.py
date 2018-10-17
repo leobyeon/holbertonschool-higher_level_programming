@@ -4,7 +4,7 @@ def read_lines(filename="", nb_lines=0):
     with open(filename, encoding="utf-8") as myFile:
 
         linenum = -1
-        
+
         while True:
             line = myFile.readline()
             linenum += 1
@@ -12,8 +12,8 @@ def read_lines(filename="", nb_lines=0):
                 break
     myFile.close()
 
-    with open(filename, encoding="utf-8") as myFile: 
-    
+    with open(filename, encoding="utf-8") as myFile:
+
         print("{} : {}".format(nb_lines, linenum))
 
         if nb_lines <= 0 or nb_lines >= linenum:

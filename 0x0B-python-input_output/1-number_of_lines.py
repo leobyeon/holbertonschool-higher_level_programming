@@ -10,5 +10,5 @@ def number_of_lines(filename=""):
             linenum += 1
             if not line:
                 break
-        
+
         return linenum
