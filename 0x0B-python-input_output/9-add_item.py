@@ -2,16 +2,16 @@
 
 import sys
 
-save_to_json_file = __import__('7-save_to_json_file').save_to_json_file
-load_from_json_file = __import__('8-load_from_json_file').load_from_json_file
+save_file = __import__('7-save_to_json_file').save_to_json_file
+load_file = __import__('8-load_from_json_file').load_from_json_file
 
-try:
-    obj_from_json = load_from_json_file("add_item.json")
-    obj_from_json.extend(sys.argv[1:])
-    save_to_json_file(obj_from_json, "add_item.json")
+if __name__ == '__main__':
 
-except:
-    if len(sys.argv) != 1:
-        save_to_json_file(argv[1:], "add_item.json")
-    else:
-        save_to_json_file([], "add_item.json")
+    try:
+        obj_from_json = load_file("add_item.json")
+
+    except:
+        obj_from_json = []
+            for i in range(1, len(sys.argv)):
+                obj_from_json.append(i)
+            save_file(obj_from_json, "add_item.json")
