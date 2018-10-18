@@ -14,8 +14,9 @@ def pascal_triangle(n):
             inner = [1]
             outer.append(inner)
             continue
+
         if i == 1:
-            inner = [1,1]
+            inner = [1, 1]
             outer.append(inner)
             continue
 
