@@ -29,7 +29,7 @@ class Base:
         """write the JSON representation of list_objs to file"""
         list_dict = []
         if list_objs is None or len(list_objs) == 0:
-            pass
+            return "[]"
         else:
             for obj in list_objs:
                 list_dict.append(cls.to_dictionary(obj))
