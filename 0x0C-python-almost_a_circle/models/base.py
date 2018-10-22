@@ -29,8 +29,11 @@ class Base:
         """write the JSON representation of list_objs to file"""
         with open("{}.json".format(
                 cls.__name__), "w", encoding="utf-8") as f:
-            f.write(cls.to_json_string(
-                [(cls.to_dictionary(obj)) for obj in list_objs]
+            if list_objs is None:
+                f.write(cls.to_json_string([]))
+            else:
+                f.write(cls.to_json_string(
+                    [(cls.to_dictionary(obj)) for obj in list_objs]
                 ))
 
     @staticmethod
