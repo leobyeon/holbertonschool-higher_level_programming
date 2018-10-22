@@ -59,10 +59,12 @@ class Base:
         """return a list of instances"""
         list_objs = []
         filename = str(cls.__name__) + ".json"
-        if filename:
+        try:
             with open("{}.json".format(
                     cls.__name__), "r", encoding="utf-8") as f:
                 ls_output = cls.from_json_string(f.read())
                 for obj in ls_output:
                     list_objs.append(cls.create(**obj))
                 return list_objs
+        except:
+            return []
