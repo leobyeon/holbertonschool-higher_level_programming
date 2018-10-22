@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""base module"""
 import json
 
 
@@ -61,4 +62,3 @@ class Base:
                 for obj in ls_output:
                     list_objs.append(cls.create(**obj))
                 return list_objs
-
