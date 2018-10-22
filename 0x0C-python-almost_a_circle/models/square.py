@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""rectangle module"""
 from models.rectangle import Rectangle
 
 
@@ -11,7 +12,8 @@ class Square(Rectangle):
 
     def __str__(self):
         """override the default str"""
-        return "[Square] ({}) {}/{} - {}".format(self.id, self.x, self.y, self.width)
+        return "[Square] ({}) {}/{} - {}".format(
+                self.id, self.x, self.y, self.width)
 
     @property
     def size(self):
