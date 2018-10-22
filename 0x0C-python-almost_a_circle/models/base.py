@@ -58,7 +58,6 @@ class Base:
     def load_from_file(cls):
         """return a list of instances"""
         list_objs = []
-        filename = str(cls.__name__) + ".json"
         try:
             with open("{}.json".format(
                     cls.__name__), "r", encoding="utf-8") as f:
