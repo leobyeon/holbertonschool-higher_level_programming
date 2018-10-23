@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 """test module for rectangle"""
+
+
 import unittest
 import json
 import sys
@@ -41,20 +43,20 @@ class RectangleTests(unittest.TestCase):
             Rectangle(6, 6, 6, 0, 6)
             Rectangle(6, 6, 6, 6, 0)
 
-        def error_messages(self):
-            """test to check correct error messages"""
-            with self.assertRaises(TypeError) as e:
-                Rectangle("satan's poop", 1)
-                self.assertEqual("width must be an integer", str(e.exception))
+    def error_messages(self):
+        """test to check correct error messages"""
+        with self.assertRaises(TypeError) as e:
+            Rectangle("satan's poop", 1)
+            self.assertEqual("width must be an integer", str(e.exception))
 
-            with self.assertRaises(TypeError) as e:
-                Rectangle(666, None)
-                self.assertEqual("height must be an integer", str(e.exception))
+        with self.assertRaises(TypeError) as e:
+            Rectangle(666, None)
+            self.assertEqual("height must be an integer", str(e.exception))
 
-            with self.assertRaises(ValueError) as e:
-                Rectangle(6, 6, -6)
-                self.assertEqual("x must be >= 0", str(e.exception))
+        with self.assertRaises(ValueError) as e:
+            Rectangle(6, 6, -6)
+            self.assertEqual("x must be >= 0", str(e.exception))
 
-            with self.assertRaises(ValueError) as e:
-                Rectangle(6, 6, 6, -6)
-                self.assertEqual("y must be >= 0", str(e.exception))
+        with self.assertRaises(ValueError) as e:
+            Rectangle(6, 6, 6, -6)
+            self.assertEqual("y must be >= 0", str(e.exception))
