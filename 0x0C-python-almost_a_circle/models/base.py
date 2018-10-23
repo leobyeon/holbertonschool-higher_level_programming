@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """base module"""
 import json
+import csv
 
 
 class Base:
@@ -67,3 +68,27 @@ class Base:
                 return list_objs
         except:
             return []
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """serialize list_objs in CSV"""
+        list_dict = [cls.to_dictionary(obj) for obj in list_objs]
+        with open("{}.csv".format(
+                cls.__name__), "w", encoding="utf-8") as f:
+            writer = csv.DictWriter(f, list_dict[0].keys())
+            writer.writeheader()
+            writer.writerows(list_dict)
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """deserialize CSV"""
+        list_objs = []
+        with open("{}.csv".format(
+                cls.__name__), "r", encoding="utf-8") as f:
+            ls_output = csv.DictReader(f)
+            for obj in ls_output:
+                tmp = {}
+                for k, v in dict(obj).items():
+                    tmp[k] = int(v)
+                list_objs.append(cls.create(**tmp))
+        return list_objs
