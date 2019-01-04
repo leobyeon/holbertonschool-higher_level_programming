@@ -5,7 +5,8 @@
 if __name__ == "__main__":
     from sqlalchemy import create_engine
     from sqlalchemy.orm import sessionmaker
-    from model_state import Base, State, City
+    from model_state import Base, State
+    from model_city import City
     from sys import argv
 
     engine = create_engine(
