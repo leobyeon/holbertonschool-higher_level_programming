@@ -15,6 +15,7 @@ class City(Base):
 
     id = Column(
             Integer,
+            autoincrement=True,
             unique=True,
             primary_key=True,
             nullable=False)
