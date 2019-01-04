@@ -7,6 +7,7 @@ from sqlalchemy import Column, Integer, String, ForeignKey
 
 Base = declarative_base()
 
+
 class City(Base):
     """ City class definition """
 
@@ -14,6 +15,7 @@ class City(Base):
 
     id = Column(
             Integer,
+            AutoIncrement=True,
             unique=True,
             primary_key=True,
             nullable=False)
