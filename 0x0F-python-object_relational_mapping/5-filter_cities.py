@@ -21,7 +21,7 @@ if __name__ == "__main__":
             FROM cities\
             INNER JOIN states\
             ON states.id = state_id\
-            WHERE states.name = '{}'".format(argv[4]))
+            WHERE states.name = %s", (argv[4],))
     results = cur.fetchall()
     print(", ".join([result[0] for result in results]))
     cur.close()
