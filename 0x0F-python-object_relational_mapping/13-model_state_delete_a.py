@@ -18,7 +18,7 @@ if __name__ == "__main__":
     session = sessionmaker(bind=engine)()
     results = session.query(State).all()
     for result in results:
-        if 'a' in result:
+        if 'a' in str(result):
             session.delete(result)
     session.commit()
     session.close()
