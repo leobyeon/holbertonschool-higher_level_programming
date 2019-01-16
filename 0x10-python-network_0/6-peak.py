@@ -2,7 +2,7 @@
 
 
 def find_peak(list_of_integers):
-""" finds a peak in an unsorted list of integers """
+    """finds a peak in an unsorted list of integers"""
     arr = list_of_integers
     if arr != []:
         arr.sort()
