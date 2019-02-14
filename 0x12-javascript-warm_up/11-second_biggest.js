@@ -2,9 +2,6 @@
 if (process.argv.length < 4) {
   console.log(0);
 } else {
-  let arr = [];
-  for (let i = 2; i < process.argv.length; i++) {
-    arr.push(process.argv[i]);
-  }
+  let arr = process.argv.slice(2)
   console.log(arr.sort((a, b) => a - b)[arr.length - 2]);
 }
